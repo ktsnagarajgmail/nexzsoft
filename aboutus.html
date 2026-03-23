@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Nexzsoft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0b0f1a;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    header h1 { color: #22c55e; }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #cbd5f5;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 0 60px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #22c55e;
+    }
+
+    .section p {
+      color: #94a3b8;
+      line-height: 1.7;
+      max-width: 800px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    .card h3 {
+      color: #22c55e;
+      margin-bottom: 10px;
+    }
+
+    .card p { color: #94a3b8; }
+
+    .cta {
+      background: #22c55e;
+      color: black;
+      padding: 60px 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #020617;
+      margin-top: 80px;
+      padding: 60px 20px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    footer p, footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      color: #64748b;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Nexzsoft</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Solutions</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Building the Future of Intelligent Conversations</h1>
+    <p>
+      Nexzsoft is redefining how businesses connect, engage, and grow through AI-powered communication.
+    </p>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="section">
+    <h2>Who We Are</h2>
+
+    <p>
+      <strong>Nexzsoft is an AI-powered platform designed to enhance and unify customer communication across modern business channels.</strong>
+      In today’s digital world, businesses interact with customers through multiple platforms like WhatsApp, Facebook, Instagram, and more — often leading to fragmented experiences and inconsistent responses.
+    </p>
+
+    <p style="margin-top:15px;">
+      Nexzsoft solves this by bringing all customer interactions into one intelligent system. Our platform leverages advanced AI to understand user queries, analyze business-specific documents, and deliver accurate, context-aware responses in real time.
+    </p>
+
+    <div class="grid" style="margin-top:30px;">
+
+      <div class="card">
+        <h3>Unified Conversations</h3>
+        <p>Manage WhatsApp, Facebook, Instagram, and more — all in one place.</p>
+      </div>
+
+      <div class="card">
+        <h3>AI with Context</h3>
+        <p>Responses powered by your business data, documents, and workflows.</p>
+      </div>
+
+      <div class="card">
+        <h3>Smart Automation</h3>
+        <p>Handle support, queries, and engagement without manual effort.</p>
+      </div>
+
+      <div class="card">
+        <h3>Scalable Growth</h3>
+        <p>Serve more customers efficiently without increasing your team size.</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:30px;">
+      We don’t just automate replies — we enable businesses to create smarter, faster, and more meaningful conversations that enhance customer experience and drive real business growth.
+    </p>
+
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2>How Nexzsoft Works</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>1. Sign Up</h3>
+        <p>Get started by creating your Nexzsoft account and setting up your business profile to enable our AI-powered services.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Connect Your Business</h3>
+        <p>Integrate your customer communication channels like WhatsApp, Facebook, Instagram, and more to activate unified interactions.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Seamless Services</h3>
+        <p>Deliver fast, consistent, and intelligent responses across all platforms using our AI-driven automation and workflows.</p>
+      </div>
+
+      <div class="card">
+        <h3>4. Business Growth</h3>
+        <p>Improve customer satisfaction, resolve queries instantly, and scale your operations—driving measurable growth for your business.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="section">
+    <h2>What You Get</h2>
+
+    <p>
+      With Nexzsoft, businesses empower their customers with faster responses, exceptional experiences, and seamless interactions across every platform. By reducing manual effort and increasing efficiency, your teams can focus on what truly matters — growth and innovation.
+    </p>
+
+    <p style="margin-top:15px;">
+      The result is higher engagement, improved conversions, and scalable business growth driven by consistently satisfied customer experiences.
+    </p>
+
+    <p style="margin-top:15px;">
+      Nexzsoft operates to simplify and elevate customer communication through intelligent, AI-driven automation. We strive to help businesses deliver consistent, high-quality interactions that build trust, enhance customer satisfaction, and unlock sustainable growth.
+    </p>
+
+  </section>
+
+  <!-- MISSION -->
+  <section class="section">
+    <h2>Our Mission</h2>
+
+    <p>
+      Our mission is to provide complete transparency and a strong commitment to service quality. Our focus is to ensure every business delivers seamless experiences to their customers — while we provide the same level of seamless, reliable service to you.
+    </p>
+
+    <p style="margin-top:15px;">
+      Nexzsoft works with full ownership, dedication, and responsibility — treating your business as our own.
+    </p>
+
+  </section>
+
+  <!-- VISION -->
+  <section class="section">
+    <h2>Our Vision</h2>
+    <p>
+      We envision a future where AI seamlessly manages conversations, understands users deeply, and continuously improves interactions — 
+      allowing businesses to focus on innovation and growth.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="cta">
+      <h2>Let’s Build Smarter Conversations Together</h2>
+      <button>Get Started</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <h2 style="color:#22c55e;">Nexzsoft</h2>
+      <p>AI-driven automation for modern business growth.</p>
+    </div>
+
+    <div>
+      <h3>Links</h3>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="privacy.html">Privacy</a></p>
+      <p><a href="terms.html">Terms</a></p>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>info@nexzsoft.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    Nexzsoft © 2026
+  </div>
+</footer>
+
+</body>
+</html>
