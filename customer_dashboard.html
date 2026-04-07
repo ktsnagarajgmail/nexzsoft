@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexzsoft Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#0b0f1a;
+  color:white;
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width:240px;
+  background:#020617;
+  height:100vh;
+  padding:20px;
+}
+
+.sidebar h2 {
+  color:#22c55e;
+}
+
+.menu-item {
+  margin:15px 0;
+  cursor:pointer;
+  color:#94a3b8;
+}
+
+.menu-item:hover {
+  color:white;
+}
+
+.submenu {
+  margin-left:15px;
+  margin-top:10px;
+}
+
+/* MAIN */
+.main {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* HEADER */
+.header {
+  padding:15px;
+  border-bottom:1px solid #1f2937;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* CONTENT */
+.content {
+  flex:1;
+  display:flex;
+}
+
+/* CHAT AREA */
+.chat-section {
+  width:60%;
+  border-right:1px solid #1f2937;
+  display:flex;
+  flex-direction:column;
+}
+
+.chat-header {
+  padding:10px;
+  border-bottom:1px solid #1f2937;
+}
+
+.chat-messages {
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+}
+
+.message {
+  margin:10px 0;
+}
+
+.customer {
+  text-align:left;
+  color:#94a3b8;
+}
+
+.agent {
+  text-align:right;
+  color:#22c55e;
+}
+
+/* INPUT */
+.chat-input {
+  display:flex;
+  padding:10px;
+  border-top:1px solid #1f2937;
+}
+
+.chat-input input {
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+}
+
+.chat-input button {
+  margin-left:10px;
+  padding:10px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  border-radius:6px;
+}
+
+/* SETTINGS */
+.settings {
+  width:40%;
+  padding:15px;
+}
+
+.card {
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+input, textarea {
+  width:100%;
+  padding:8px;
+  margin-top:8px;
+  border:none;
+  border-radius:6px;
+}
+
+button {
+  margin-top:10px;
+  padding:10px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>Nexzsoft</h2>
+
+  <div class="menu-item">Dashboard</div>
+
+  <div class="menu-item">Connect</div>
+
+  <div class="submenu">
+    <div class="menu-item" onclick="loadWhatsApp()">WhatsApp</div>
+    <div class="menu-item">Facebook</div>
+    <div class="menu-item">Instagram</div>
+    <div class="menu-item">Telegram</div>
+    <div class="menu-item">X</div>
+    <div class="menu-item">WeChat</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>Welcome to Nexzsoft</div>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- CHAT -->
+    <div class="chat-section">
+      <div class="chat-header">WhatsApp Chat</div>
+
+      <div class="chat-messages" id="chatBox">
+        <div class="message customer">Hi</div>
+        <div class="message agent">Hello! How can I help?</div>
+      </div>
+
+      <div class="chat-input">
+        <input id="msgInput" placeholder="Type message...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="settings">
+
+      <div class="card">
+        <h3>Connect WhatsApp</h3>
+        <button onclick="connectWhatsApp()">Connect</button>
+      </div>
+
+      <div class="card">
+        <h3>AI Configuration (RAG)</h3>
+        <textarea placeholder="Add knowledge base..."></textarea>
+        <button>Save</button>
+      </div>
+
+      <div class="card">
+        <h3>Automation Settings</h3>
+        <input placeholder="Fallback message">
+        <button>Save</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+// Load WhatsApp section
+function loadWhatsApp(){
+  alert("WhatsApp section loaded");
+}
+
+// Send message (UI only for now)
+function sendMessage(){
+  const input = document.getElementById("msgInput");
+  const msg = input.value;
+
+  if(!msg) return;
+
+  const div = document.createElement("div");
+  div.className = "message agent";
+  div.innerText = msg;
+
+  document.getElementById("chatBox").appendChild(div);
+
+  input.value="";
+}
+
+// Connect WhatsApp
+function connectWhatsApp(){
+  alert("Trigger embedded signup here");
+}
+
+// Logout
+function logout(){
+  localStorage.removeItem("token");
+  window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
