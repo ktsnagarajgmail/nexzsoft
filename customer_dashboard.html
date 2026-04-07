@@ -24,9 +24,7 @@ body {
   padding:20px;
 }
 
-.sidebar h2 {
-  color:#22c55e;
-}
+.sidebar h2 { color:#22c55e; }
 
 .menu-item {
   margin:15px 0;
@@ -34,9 +32,7 @@ body {
   color:#94a3b8;
 }
 
-.menu-item:hover {
-  color:white;
-}
+.menu-item:hover { color:white; }
 
 .submenu {
   margin-left:15px;
@@ -58,13 +54,34 @@ body {
   justify-content:space-between;
 }
 
+/* TOP NAV */
+.topnav {
+  display:flex;
+  gap:20px;
+  padding:10px 20px;
+  border-bottom:1px solid #1f2937;
+}
+
+.topnav div {
+  cursor:pointer;
+  color:#94a3b8;
+}
+
+.topnav div:hover {
+  color:white;
+}
+
+.active-tab {
+  color:#22c55e !important;
+}
+
 /* CONTENT */
 .content {
   flex:1;
   display:flex;
 }
 
-/* CHAT AREA */
+/* CHAT */
 .chat-section {
   width:60%;
   border-right:1px solid #1f2937;
@@ -83,19 +100,9 @@ body {
   overflow-y:auto;
 }
 
-.message {
-  margin:10px 0;
-}
-
-.customer {
-  text-align:left;
-  color:#94a3b8;
-}
-
-.agent {
-  text-align:right;
-  color:#22c55e;
-}
+.message { margin:10px 0; }
+.customer { color:#94a3b8; }
+.agent { text-align:right; color:#22c55e; }
 
 /* INPUT */
 .chat-input {
@@ -141,15 +148,9 @@ input, textarea {
   border-radius:6px;
 }
 
-button {
-  margin-top:10px;
-  padding:10px;
-  background:#22c55e;
-  border:none;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-}
+/* HIDDEN SECTIONS */
+.hidden { display:none; }
+
 </style>
 </head>
 
@@ -182,8 +183,16 @@ button {
     <button onclick="logout()">Logout</button>
   </div>
 
-  <!-- CONTENT -->
-  <div class="content">
+  <!-- TOP FEATURE NAV -->
+  <div class="topnav">
+    <div id="tab-inbox" class="active-tab" onclick="switchTab('inbox')">Inbox</div>
+    <div id="tab-broadcast" onclick="switchTab('broadcast')">Broadcast</div>
+    <div id="tab-automation" onclick="switchTab('automation')">Automation</div>
+    <div id="tab-contacts" onclick="switchTab('contacts')">Contacts</div>
+  </div>
+
+  <!-- INBOX (CHAT) -->
+  <div id="inbox" class="content">
 
     <!-- CHAT -->
     <div class="chat-section">
@@ -202,7 +211,6 @@ button {
 
     <!-- SETTINGS -->
     <div class="settings">
-
       <div class="card">
         <h3>Connect WhatsApp</h3>
         <button onclick="connectWhatsApp()">Connect</button>
@@ -219,42 +227,69 @@ button {
         <input placeholder="Fallback message">
         <button>Save</button>
       </div>
-
     </div>
 
+  </div>
+
+  <!-- BROADCAST -->
+  <div id="broadcast" class="content hidden">
+    <div style="padding:20px;">
+      <h2>Broadcast Messaging</h2>
+      <textarea placeholder="Enter your message..."></textarea>
+      <button>Send Broadcast</button>
+    </div>
+  </div>
+
+  <!-- AUTOMATION -->
+  <div id="automation" class="content hidden">
+    <div style="padding:20px;">
+      <h2>Automation Rules</h2>
+      <input placeholder="Keyword trigger">
+      <textarea placeholder="Response"></textarea>
+      <button>Save Rule</button>
+    </div>
+  </div>
+
+  <!-- CONTACTS -->
+  <div id="contacts" class="content hidden">
+    <div style="padding:20px;">
+      <h2>Contacts</h2>
+      <p>Contact list will appear here</p>
+    </div>
   </div>
 
 </div>
 
 <script>
 
-// Load WhatsApp section
-function loadWhatsApp(){
-  alert("WhatsApp section loaded");
+// TAB SWITCH
+function switchTab(tab){
+  document.querySelectorAll(".content").forEach(el=>el.classList.add("hidden"));
+  document.getElementById(tab).classList.remove("hidden");
+
+  document.querySelectorAll(".topnav div").forEach(el=>el.classList.remove("active-tab"));
+  document.getElementById("tab-"+tab).classList.add("active-tab");
 }
 
-// Send message (UI only for now)
+// SEND MESSAGE
 function sendMessage(){
   const input = document.getElementById("msgInput");
-  const msg = input.value;
-
-  if(!msg) return;
+  if(!input.value) return;
 
   const div = document.createElement("div");
   div.className = "message agent";
-  div.innerText = msg;
+  div.innerText = input.value;
 
   document.getElementById("chatBox").appendChild(div);
-
   input.value="";
 }
 
-// Connect WhatsApp
+// CONNECT
 function connectWhatsApp(){
-  alert("Trigger embedded signup here");
+  alert("Trigger embedded signup");
 }
 
-// Logout
+// LOGOUT
 function logout(){
   localStorage.removeItem("token");
   window.location.href="index.html";
